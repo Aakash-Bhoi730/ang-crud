@@ -1,9 +1,10 @@
 import { Component, OnInit } from '@angular/core';
 import { ModelComponent } from '../shared/ui/model/model.component';
 import { EmployeeFormComponent } from '../employee-form/employee-form.component';
-import { ToastrService } from 'ngx-toastr';
 import { EmployeeService } from '../../services/employee.service';
 import { IEmployee } from '../shared/models/Employee';
+import { ToastrService } from 'ngx-toastr';
+
 @Component({
   selector: 'app-employee',
   standalone: true,
@@ -27,7 +28,7 @@ export class EmployeeComponent implements OnInit {
 
   getAllEmployee() {
     this.employeeService.getAllEmployee().subscribe({
-      next: (response) => {
+      next: (response: any) => {
         if (response.data) {
           this.employees = response.data;
         }
@@ -42,7 +43,7 @@ export class EmployeeComponent implements OnInit {
 
   deleteEmployee(id: string) {
     this.employeeService.deleteEmployee(id).subscribe({
-      next: (response) => {
+      next: (response: any) => {
         this.toastr.success(response.message);
         this.getAllEmployee();
       },

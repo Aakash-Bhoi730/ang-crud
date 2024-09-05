@@ -53,9 +53,7 @@ export class EmployeeFormComponent implements OnChanges {
       this.employeeForm.patchValue({
         name: this.data.name,
         email: this.data.email,
-        mobile: this.data.mobile,
-        dob: formatDate(this.data.dob, 'yyyy-MM-dd', 'en'),
-        doj: this.data.doj,
+        city: this.data.city,
       });
     }
   }

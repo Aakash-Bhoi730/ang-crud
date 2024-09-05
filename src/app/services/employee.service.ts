@@ -7,7 +7,7 @@ import { ApiResponse, IEmployee } from '../pages/shared/models/Employee';
   providedIn: 'root',
 })
 export class EmployeeService {
-  apiurl = 'http://localhost:4000/employee';
+  apiurl = 'http://localhost:5400/api/users';
   constructor(private http: HttpClient) {}
 
   getAllEmployee(): Observable<ApiResponse<IEmployee[]>> {
